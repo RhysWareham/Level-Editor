@@ -1,0 +1,40 @@
+﻿<Window x:Class="CT4027_Assignment1_Rhys_Wareham.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CT4027_Assignment1_Rhys_Wareham"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+        <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <!--Create a drop down menu with a New, Load, Save and Close button-->
+                <MenuItem Header="New" Click="HandleNew"/>
+                <MenuItem Header="Load" Click="HandleLoad"/>
+                <MenuItem Header="Save" Click="HandleSave"/>
+                <MenuItem Header="Close" Click="HandleClose"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <!--Create two buttons for the user to select the tool; Pen and Erase-->
+                <RadioButton IsChecked="True" Click="HandlePen">Pen</RadioButton>
+                <RadioButton Click="HandleErase">Erase</RadioButton>
+            </ToolBar>
+        </ToolBarTray>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <!--Create a panel at the bottom of the window which displays the chosen sprite and the coordinates of the cursor-->
+            <Label x:Name="label" Content="Selected: "/>
+            <Image x:Name="image" Stretch="None"/>
+            <Button Content="Render Selected Sprites" Click="Render" Margin="10,0,0,0"/>
+            <Label x:Name="axis" Content="Coordinates: "/>
+        </StackPanel>
+            <!--Create a panel underneath the Pen and Erase buttons, which will store sprites for the user to choose from-->
+        <local:SwatchPanel x:Name="swatch" DockPanel.Dock="Top"/>
+        <StackPanel x:Name="selectedImages" Orientation="Horizontal"/>
+            <!--Create a grid named "grid" and set the colour to light grey-->
+        <Grid x:Name ="grid" Background="LightGray"/>
+    </DockPanel>
+    
+</Window>

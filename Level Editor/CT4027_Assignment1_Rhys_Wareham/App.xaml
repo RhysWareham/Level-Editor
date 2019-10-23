@@ -1,0 +1,9 @@
+﻿<Application x:Class="CT4027_Assignment1_Rhys_Wareham.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CT4027_Assignment1_Rhys_Wareham"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
